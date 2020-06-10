@@ -1,0 +1,17 @@
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\bin\Debug\fpMixerStudio(WPF).exe.config
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\obj\Debug\fpMixerStudio(WPF).exe
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\obj\Debug\fpMixerStudio(WPF).pdb
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\bin\Debug\fpMixerStudio(WPF).exe
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\bin\Debug\fpMixerStudio(WPF).pdb
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\obj\Debug\fpMixerStudio(WPF).csprojResolveAssemblyReference.cache
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\obj\Debug\FPsplash.baml
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\obj\Debug\MainWindow.baml
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\obj\Debug\videoSource.baml
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\obj\Debug\FPsplash.g.cs
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\obj\Debug\MainWindow.g.cs
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\obj\Debug\videoSource.g.cs
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\obj\Debug\App.g.cs
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\obj\Debug\fpMixerStudio(WPF)_MarkupCompile.cache
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\obj\Debug\fpMixerStudio(WPF).g.resources
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\obj\Debug\fpMixerStudio_WPF_.Properties.Resources.resources
+G:\MyProject\VISUAL STUDIO\VISUAL C# WPF PROJECT\fpMixerStudio(WPF) -New UI\fpMixerStudio(WPF)\obj\Debug\fpMixerStudio(WPF).csproj.GenerateResource.Cache

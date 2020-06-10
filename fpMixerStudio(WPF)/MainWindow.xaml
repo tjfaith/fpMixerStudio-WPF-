@@ -1,0 +1,793 @@
+﻿<Window x:Class="fpMixerStudio_WPF_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       BorderBrush="Black"
+        Background="#FF403A3A"
+        Title="FP Mixer Studio" Height="785.172" Width="1231.774" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="resources/fplogo4.png" SnapsToDevicePixels="True">
+
+
+    <!--ANIMATION -->
+    <Window.Resources>
+        <Style x:Key="video1" TargetType="StackPanel">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="0.7" Duration="0:0:0.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0.7" To="0" Duration="0:0:5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <!--END ANIMATION-->
+  
+    <StackPanel>
+        <Menu Foreground="White" Background="DarkGray">
+
+            <MenuItem Header="File" Command="Open"/>
+            <MenuItem Header="Edit"/>
+            <MenuItem Header="View" Command="Open"/>
+
+            <MenuItem Header="Settings"/>
+            <MenuItem Header="About"/>
+        </Menu>
+        <StackPanel>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="110"/>
+                    <RowDefinition Height="110"/>
+                    <RowDefinition Height="110"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+          
+
+            
+
+                <Border   Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3"  Name="LIVE2"   HorizontalAlignment="Left"
+                   Height="450" Margin="10,10,0,0"  Background="Black" 
+                   VerticalAlignment="Top" Width="600" >
+
+                    <MediaElement x:Name="LiveVideo2" Margin="0,0,0,128"></MediaElement>
+
+                </Border >
+
+                <Border   Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3"  Name="LIVE"   HorizontalAlignment="Left"
+                   Height="450" Margin="10,10,0,0"  Background="Black" 
+                   VerticalAlignment="Top" Width="600" >
+
+                    <MediaElement x:Name="LiveVideo" Margin="0,0,0,128"></MediaElement>
+
+                </Border >
+
+
+
+                <StackPanel Background="#FF872828" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Width="241" Height="60" VerticalAlignment="Bottom" Orientation="Horizontal">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                    
+                        <Button   Grid.Column="0" Grid.Row="0"    VerticalAlignment="Top" Content="1" BorderThickness="0"  Width="60" Height="30" Foreground="Black" FontWeight="Bold" Click="sendVideo_1_Live" >
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FF252424" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                        <Button Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" Content="2" BorderThickness="0"  Width="60" Height="30" Foreground="Black" FontWeight="Bold" Click="sendVideo_2_Live">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FF252424" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                        <Button Grid.Column="2" Grid.Row="0" VerticalAlignment="Top" Content="3" BorderThickness="0"   Width="60" Height="30" Foreground="Black" FontWeight="Bold" Click="sendVideo_3_Live">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FF252424" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                        <Button  Grid.Column="3" Grid.Row="0" VerticalAlignment="Top" Content="4" BorderThickness="0" Width="60" Height="30" Foreground="Black" FontWeight="Bold" Click="sendVideo_4_Live">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FF252424" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+
+                        <Button  Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Content="5" BorderThickness="0"  Width="60" Height="30" Foreground="Black" FontWeight="Bold" Click="sendVideo_5_Live">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FF252424" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                        <Button Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" Content="6" BorderThickness="0"  Width="60" Height="30" Foreground="Black" FontWeight="Bold" Click="sendVideo_6_Live">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FF252424" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                        <Button  Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" Content="7" BorderThickness="0"   Width="60" Height="30" Foreground="Black" FontWeight="Bold" Click="sendVideo_7_Live">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FF252424" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                        <Button  Grid.Column="3" Grid.Row="1"  VerticalAlignment="Top" Content="8" BorderThickness="0" Width="60" Height="30" Foreground="Black" FontWeight="Bold" Click="sendVideo_8_Live">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FF252424" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    </Grid>
+
+                </StackPanel>
+
+                <Border  Grid.Column="5"  Grid.Row="0" Name="videoMix1"  
+                   Height="95" Margin="20,10,0,0"  Background="Black" 
+                   VerticalAlignment="Top" Width="200"
+                  >
+
+                <MediaElement ></MediaElement>
+            </Border >
+                <Border  Grid.Column="5"  Grid.Row="1" Name="videoMix2"
+                   Height="95" Margin="20,10,0,0"  Background="Black" 
+                   VerticalAlignment="Top" Width="200"
+                  >
+
+                <MediaElement ></MediaElement>
+            </Border >
+
+                <Border  Grid.Column="5"  Grid.Row="2" Name="videoMix3"  
+                   Height="95" Margin="20,10,0,0"  Background="Black" 
+                   VerticalAlignment="Top" Width="200"
+                  >
+
+                    <MediaElement ></MediaElement>
+                </Border >
+                <!--VIDEO CHANNEL SOURCE-->
+                <Label x:Name="changeVideoChannel" Visibility="Hidden" Content="Label" Grid.Column="3" HorizontalAlignment="Left" Margin="172,70,0,0" VerticalAlignment="Top"/>
+
+            </Grid>
+        </StackPanel>
+        <StackPanel>
+            <Grid Margin="0,0,20,0" >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="200"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+           <!--0000000000000000  START OF TOP VIDEO SOURCE   OOOOOOOOOOOOOOOOOOOOOOOOOO-->
+               <!--videoSource1-->
+                <StackPanel Grid.Column="0"  Grid.Row="0"  Margin="10,10,0,0" Background="Black">
+                    <StackPanel Orientation="Horizontal" >
+                        
+                        <Button VerticalAlignment="Top" HorizontalAlignment="Center" Content="Video Source" BorderThickness="0" Width="150" Foreground="Black" FontWeight="Bold" Click="selectVideo1">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FF252424" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+
+                    <Button VerticalAlignment="Top" HorizontalAlignment="Center"   Content="Audio Source" BorderThickness="0" Width="155" Foreground="Black" FontWeight="Bold">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FF252424" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    </StackPanel>
+
+                    <Border Name="vidSource1"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="170"  Background="Black"  Width="291">
+                    <MediaElement x:Name="video1" LoadedBehavior="Manual"/>
+                    </Border >
+                
+                </StackPanel>
+
+
+                <StackPanel Height="55" x:Name="VideoMixControl1" Background="Black" VerticalAlignment="Bottom" Margin="10,0,0,195" Grid.RowSpan="2" Style="{StaticResource video1}" Opacity="0" MouseMove="showVideoControl">
+                    <Grid Height="55" >
+                        <Grid.RowDefinitions >
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="0"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Seek to progressbar. Ths slider allows you to jump to different parts of the media playback. -->
+                         <Slider  x:Name="video_1_slider" Grid.Column="0" Grid.ColumnSpan ="5"  Grid.Row="0" Panel.ZIndex="100" VerticalAlignment="Top" Height="5"   ValueChanged="video_1_Progrss" Thumb.DragStarted="video_1_slider_DragStarted"  Thumb.DragCompleted="video_1_slider_DragCompleted" />
+                        <ProgressBar  x:Name="video_1_progressbar" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan ="5" VerticalAlignment="Top" Foreground="Red"  Height="5"  Opacity="100" ValueChanged="video_1_Progrss"/>
+
+                        <TextBlock  Foreground="White" VerticalAlignment="Top" Margin="0,3,0,0" x:Name="txt" Grid.ColumnSpan="5"/>
+                        <Image x:Name="video_1_PlayBtn"   Source="resources/play.fw.png" Grid.Column="0"  Width="20" Height="20"  HorizontalAlignment="Left" Margin="10,15,0,10" Grid.RowSpan="3" MouseDown="video_1_Play"/>
+                        <Image x:Name="video_1_PauseBtn" Source="resources/pause.fw.png" Grid.Column="0" Width="20" Height="20" HorizontalAlignment="Left" Margin="10,15,0,10" Grid.RowSpan="3" MouseDown="video_1_Pause" Visibility="Collapsed"/>
+                        <Image Source="resources/stop.fw.png" Grid.Column="1" Width="20"  HorizontalAlignment="Left" Grid.RowSpan="2" Height="20" VerticalAlignment="Bottom" Margin="0,0,0,15" Grid.Row="1" MouseDown="video_1_Stop"/>
+
+                        <!-- Volume slider. This slider allows a Volume range between 0 and 1. -->
+                        <TextBlock Foreground="White" Grid.Column="2" Grid.Row="1"  VerticalAlignment="Center" Margin="5" Text="Volume"/>
+                        <Slider x:Name="volumeSlider"  Grid.Column="4"  Grid.Row="1" VerticalAlignment="Bottom" ValueChanged="video_1_Volume" Minimum="0" Maximum="1" Value="0.5" Cursor="Hand" Margin="0,0,0,1" HorizontalAlignment="Left" Width="115" />
+                        <Image HorizontalAlignment="Right"   Grid.Column="4"  Source="resources\videoChannel.fw.png"  Opacity="1"   Width="66" RenderTransformOrigin="0.122,0.526" Grid.RowSpan="3" />
+                       
+
+                    </Grid>
+                </StackPanel>
+                <!-- End Of videoSource1-->
+
+                <!--Start of videoSource2-->
+                <StackPanel Grid.Column="1"  Grid.Row="0"  Margin="10,10,0,0" Background="Black">
+                    <StackPanel Orientation="Horizontal" >
+
+                        <Button VerticalAlignment="Top" HorizontalAlignment="Center" Content="Video Source" BorderThickness="0" Width="150" Foreground="Black" FontWeight="Bold" Click="selectVideo2">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF252424" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+
+                        <Button VerticalAlignment="Top" HorizontalAlignment="Center"   Content="Audio Source" BorderThickness="0" Width="155" Foreground="Black" FontWeight="Bold">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF252424" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+
+                    <Border   Name="vidSource2"  HorizontalAlignment="Center" Height="170"  Background="Black" VerticalAlignment="Center" Width="291">
+
+                        <MediaElement x:Name="video2" LoadedBehavior="Manual"/>
+                    </Border >
+
+                </StackPanel>
+
+
+                <StackPanel Height="55" x:Name="VideoMixControl2" Background="Black" VerticalAlignment="Bottom" Margin="10,0,0,195" Grid.RowSpan="2" Grid.Column="1"    Style="{StaticResource video1}" Opacity="0" MouseMove="showVideoControl">
+                    <Grid Height="55" >
+                        <Grid.RowDefinitions >
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="0"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Seek to progressbar. Ths slider allows you to jump to different parts of the media playback. -->
+                        <Slider  x:Name="video_1_slider2" Grid.Column="0" Grid.ColumnSpan ="5"  Grid.Row="0" Panel.ZIndex="100" VerticalAlignment="Top" Height="5"   ValueChanged="video_1_Progrss2" Thumb.DragStarted="video_1_slider_DragStarted2"  Thumb.DragCompleted="video_1_slider_DragCompleted2" />
+                        <ProgressBar  x:Name="video_1_progressbar2" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan ="5" VerticalAlignment="Top" Foreground="Red"  Height="5"  ValueChanged="video_1_Progrss2"/>
+
+                        <TextBlock Foreground="White" VerticalAlignment="Top" Margin="0,3,0,0" x:Name="txt2" Grid.ColumnSpan="5"/>
+
+                        <Image x:Name="video_1_PlayBtn2"   Source="resources/play.fw.png" Grid.Column="0"  Width="20" Height="20"  HorizontalAlignment="Left" Margin="10,15,0,10" Grid.RowSpan="3" MouseDown="video_1_Play2"/>
+                        <Image x:Name="video_1_PauseBtn2" Source="resources/pause.fw.png" Grid.Column="0" Width="20" Height="20" HorizontalAlignment="Left" Margin="10,15,0,10" Grid.RowSpan="3" MouseDown="video_1_Pause2" Visibility="Collapsed"/>
+                        <Image Source="resources/stop.fw.png" Grid.Column="1" Width="20"  HorizontalAlignment="Left" Grid.RowSpan="2" Height="20" VerticalAlignment="Bottom" Margin="0,0,0,15" Grid.Row="1" MouseDown="video_1_Stop2"/>
+
+                        <!-- Volume slider. This slider allows a Volume range between 0 and 1. -->
+                        <TextBlock Foreground="White" Grid.Column="1" Grid.Row="1"  VerticalAlignment="Center" Margin="40,1,5,1" Text="Volume" Grid.ColumnSpan="2"/>
+                        <Slider x:Name="volumeSlider2"  Grid.Column="4"  Grid.Row="1" VerticalAlignment="Bottom" ValueChanged="video_1_Volume2" Minimum="0" Maximum="1" Value="0.5" Cursor="Hand" Margin="0,0,0,1" HorizontalAlignment="Left" Width="115" />
+                        <Image HorizontalAlignment="Right"   Grid.Column="4"  Source="resources\videoChannel2.fw.png"     Width="66" RenderTransformOrigin="0.122,0.0" Margin="0,3,0,-3" Grid.RowSpan="3" />
+
+
+                    </Grid>
+                </StackPanel>
+                <!--End of video source 2-->
+
+
+
+
+
+                <!--Start of videoSource3-->
+                <StackPanel Grid.Column="2"  Grid.Row="0"  Margin="10,10,0,0" Background="Black">
+                    <StackPanel Orientation="Horizontal" >
+
+                        <Button VerticalAlignment="Top" HorizontalAlignment="Center" Content="Video Source" BorderThickness="0" Width="150" Foreground="Black" FontWeight="Bold" Click="selectVideo3">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF252424" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+
+                        <Button VerticalAlignment="Top" HorizontalAlignment="Center"   Content="Audio Source" BorderThickness="0" Width="155" Foreground="Black" FontWeight="Bold">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF252424" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+
+                    <Border   Name="vidSource3"  HorizontalAlignment="Center" Height="170"  Background="Black" VerticalAlignment="Center" Width="291">
+
+                        <MediaElement x:Name="video3" LoadedBehavior="Manual"/>
+                    </Border >
+
+                </StackPanel>
+
+
+                <StackPanel Height="55" x:Name="VideoMixControl3" Background="Black" VerticalAlignment="Bottom" Margin="10,0,0,195" Grid.RowSpan="2" Grid.Column="2"    Style="{StaticResource video1}" Opacity="0" MouseMove="showVideoControl">
+                    <Grid Height="55" >
+                        <Grid.RowDefinitions >
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="0"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Seek to progressbar. Ths slider allows you to jump to different parts of the media playback. -->
+                        <Slider  x:Name="video_1_slider3" Grid.Column="0" Grid.ColumnSpan ="5"  Grid.Row="0" Panel.ZIndex="100" VerticalAlignment="Top" Height="5"   ValueChanged="video_1_Progrss3" Thumb.DragStarted="video_1_slider_DragStarted3"  Thumb.DragCompleted="video_1_slider_DragCompleted3" />
+                        <ProgressBar  x:Name="video_1_progressbar3" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan ="5" VerticalAlignment="Top" Foreground="Red"  Height="5"  ValueChanged="video_1_Progrss3"/>
+
+                        <TextBlock Foreground="White" VerticalAlignment="Top" Margin="0,3,0,0" x:Name="txt3" Grid.ColumnSpan="5"/>
+
+                        <Image x:Name="video_1_PlayBtn3"   Source="resources/play.fw.png" Grid.Column="0"  Width="20" Height="20"  HorizontalAlignment="Left" Margin="10,15,0,10" Grid.RowSpan="3" MouseDown="video_1_Play3"/>
+                        <Image x:Name="video_1_PauseBtn3" Source="resources/pause.fw.png" Grid.Column="0" Width="20" Height="20" HorizontalAlignment="Left" Margin="10,15,0,10" Grid.RowSpan="3" MouseDown="video_1_Pause3" Visibility="Collapsed"/>
+                        <Image Source="resources/stop.fw.png" Grid.Column="1" Width="20"  HorizontalAlignment="Left" Grid.RowSpan="2" Height="20" VerticalAlignment="Bottom" Margin="0,0,0,15" Grid.Row="1" MouseDown="video_1_Stop3"/>
+
+                        <!-- Volume slider. This slider allows a Volume range between 0 and 1. -->
+                        <TextBlock Foreground="White" Grid.Column="1" Grid.Row="1"  VerticalAlignment="Center" Margin="40,1,5,1" Text="Volume" Grid.ColumnSpan="2"/>
+                        <Slider x:Name="volumeSlider3"  Grid.Column="4"  Grid.Row="1" VerticalAlignment="Bottom" ValueChanged="video_1_Volume3" Minimum="0" Maximum="1" Value="0.5" Cursor="Hand" Margin="0,0,0,1" HorizontalAlignment="Left" Width="115" />
+                        <Image HorizontalAlignment="Right"   Grid.Column="4"  Source="resources\videoChannel3.fw.png"     Width="66" RenderTransformOrigin="0.122,0.0" Margin="0,3,0,-3" Grid.RowSpan="3" />
+
+
+                    </Grid>
+                </StackPanel>
+                <!--End of video source 3-->
+
+
+                <!--Start of videoSource4-->
+                <StackPanel Grid.Column="3"  Grid.Row="0"  Margin="10,10,0,0" Background="Black">
+                    <StackPanel Orientation="Horizontal" >
+
+                        <Button VerticalAlignment="Top" HorizontalAlignment="Center" Content="Video Source" BorderThickness="0" Width="150" Foreground="Black" FontWeight="Bold" Click="selectVideo4">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF252424" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+
+                        <Button VerticalAlignment="Top" HorizontalAlignment="Center"   Content="Audio Source" BorderThickness="0" Width="155" Foreground="Black" FontWeight="Bold">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF252424" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+
+                    <Border   Name="vidSource4"  HorizontalAlignment="Center" Height="170"  Background="Black" VerticalAlignment="Center" Width="291">
+
+                        <MediaElement x:Name="video4" LoadedBehavior="Manual"/>
+                    </Border >
+
+                </StackPanel>
+
+
+                <StackPanel Height="55" x:Name="VideoMixControl4" Background="Black" VerticalAlignment="Bottom" Margin="10,0,0,195" Grid.RowSpan="2" Grid.Column="3"    Style="{StaticResource video1}" Opacity="0" MouseMove="showVideoControl">
+                    <Grid Height="55" >
+                        <Grid.RowDefinitions >
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="0"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Seek to progressbar. Ths slider allows you to jump to different parts of the media playback. -->
+                        <Slider  x:Name="video_1_slider4" Grid.Column="0" Grid.ColumnSpan ="5"  Grid.Row="0" Panel.ZIndex="100" VerticalAlignment="Top" Height="5"   ValueChanged="video_1_Progrss4" Thumb.DragStarted="video_1_slider_DragStarted4"  Thumb.DragCompleted="video_1_slider_DragCompleted4" />
+                        <ProgressBar  x:Name="video_1_progressbar4" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan ="5" VerticalAlignment="Top" Foreground="Red"  Height="5"  ValueChanged="video_1_Progrss4"/>
+
+                        <TextBlock Foreground="White" VerticalAlignment="Top" Margin="0,3,0,0" x:Name="txt4" Grid.ColumnSpan="5"/>
+
+                        <Image x:Name="video_1_PlayBtn4"   Source="resources/play.fw.png" Grid.Column="0"  Width="20" Height="20"  HorizontalAlignment="Left" Margin="10,15,0,10" Grid.RowSpan="3" MouseDown="video_1_Play4"/>
+                        <Image x:Name="video_1_PauseBtn4" Source="resources/pause.fw.png" Grid.Column="0" Width="20" Height="20" HorizontalAlignment="Left" Margin="10,15,0,10" Grid.RowSpan="3" MouseDown="video_1_Pause4" Visibility="Collapsed"/>
+                        <Image Source="resources/stop.fw.png" Grid.Column="1" Width="20"  HorizontalAlignment="Left" Grid.RowSpan="2" Height="20" VerticalAlignment="Bottom" Margin="0,0,0,15" Grid.Row="1" MouseDown="video_1_Stop4"/>
+
+                        <!-- Volume slider. This slider allows a Volume range between 0 and 1. -->
+                        <TextBlock Foreground="White" Grid.Column="1" Grid.Row="1"  VerticalAlignment="Center" Margin="40,1,5,1" Text="Volume" Grid.ColumnSpan="2"/>
+                        <Slider x:Name="volumeSlider4"  Grid.Column="4"  Grid.Row="1" VerticalAlignment="Bottom" ValueChanged="video_1_Volume4" Minimum="0" Maximum="1" Value="0.5" Cursor="Hand" Margin="0,0,0,1" HorizontalAlignment="Left" Width="115" />
+                        <Image HorizontalAlignment="Right"   Grid.Column="4"  Source="resources\videoChannel4.fw.png"     Width="66" RenderTransformOrigin="0.122,0.0" Margin="0,3,0,-3" Grid.RowSpan="3" />
+
+
+                    </Grid>
+                </StackPanel>
+                <!--End of video source 4-->
+
+
+              
+<!--0000000000000000000000 END OF TOP VIDEO SOURCE 00000000000000000000000000-->
+               
+                <!--0000000000000000000000 START OF BUTTOM VIDEO SOURCE 00000000000000000000000000-->
+
+                <!--videoSource5-->
+                <StackPanel Grid.Column="0"  Grid.Row="1"  Margin="10,10,0,0" Background="Black">
+                    <StackPanel Orientation="Horizontal" >
+
+                        <Button VerticalAlignment="Top" HorizontalAlignment="Center" Content="Video Source" BorderThickness="0" Width="150" Foreground="Black" FontWeight="Bold" Click="selectVideo5">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF252424" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+
+                        <Button VerticalAlignment="Top" HorizontalAlignment="Center"   Content="Audio Source" BorderThickness="0" Width="155" Foreground="Black" FontWeight="Bold">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF252424" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+
+                    <Border Name="vidSource5"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="170"  Background="Black"  Width="291">
+                        <MediaElement x:Name="video5" LoadedBehavior="Manual"/>
+                    </Border >
+
+                </StackPanel>
+
+
+                <StackPanel Height="55" x:Name="VideoMixControl5" Background="Black" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.RowSpan="2" Grid.Row="1" Style="{StaticResource video1}" Opacity="0" MouseMove="showVideoControl">
+                    <Grid Height="55" >
+                        <Grid.RowDefinitions >
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="0"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Seek to progressbar. Ths slider allows you to jump to different parts of the media playback. -->
+                        <Slider  x:Name="video_1_slider5" Grid.Column="0" Grid.ColumnSpan ="5"  Grid.Row="0" Panel.ZIndex="100" VerticalAlignment="Top" Height="5"   ValueChanged="video_1_Progrss5" Thumb.DragStarted="video_1_slider_DragStarted5"  Thumb.DragCompleted="video_1_slider_DragCompleted5" />
+                        <ProgressBar  x:Name="video_1_progressbar5" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan ="5" VerticalAlignment="Top" Foreground="Red"  Height="5"  Opacity="100" ValueChanged="video_1_Progrss5"/>
+
+                        <TextBlock  Foreground="White" VerticalAlignment="Top" Margin="0,3,0,0" x:Name="txt5" Grid.ColumnSpan="5"/>
+                        <Image x:Name="video_1_PlayBtn5"   Source="resources/play.fw.png" Grid.Column="0"  Width="20" Height="20"  HorizontalAlignment="Left" Margin="10,15,0,10" Grid.RowSpan="3" MouseDown="video_1_Play5"/>
+                        <Image x:Name="video_1_PauseBtn5" Source="resources/pause.fw.png" Grid.Column="0" Width="20" Height="20" HorizontalAlignment="Left" Margin="10,15,0,10" Grid.RowSpan="3" MouseDown="video_1_Pause5" Visibility="Collapsed"/>
+                        <Image Source="resources/stop.fw.png" Grid.Column="1" Width="20"  HorizontalAlignment="Left" Grid.RowSpan="2" Height="20" VerticalAlignment="Bottom" Margin="0,0,0,15" Grid.Row="1" MouseDown="video_1_Stop5"/>
+
+                        <!-- Volume slider. This slider allows a Volume range between 0 and 1. -->
+                        <TextBlock Foreground="White" Grid.Column="2" Grid.Row="1"  VerticalAlignment="Center" Margin="5" Text="Volume"/>
+                        <Slider x:Name="volumeSlider5"  Grid.Column="4"  Grid.Row="1" VerticalAlignment="Bottom" ValueChanged="video_1_Volume5" Minimum="0" Maximum="1" Value="0.5" Cursor="Hand" Margin="0,0,0,1" HorizontalAlignment="Left" Width="115" />
+                        <Image HorizontalAlignment="Right"   Grid.Column="4"  Source="resources\videoChannel5.fw.png"  Opacity="1"   Width="66" RenderTransformOrigin="0.122,0.526" Grid.RowSpan="3" />
+
+
+                    </Grid>
+                </StackPanel>
+                <!-- End Of videoSource5-->
+
+                <!--Start of videoSource6-->
+                <StackPanel Grid.Column="1"  Grid.Row="1"  Margin="10,10,0,0" Background="Black">
+                    <StackPanel Orientation="Horizontal" >
+
+                        <Button VerticalAlignment="Top" HorizontalAlignment="Center" Content="Video Source" BorderThickness="0" Width="150" Foreground="Black" FontWeight="Bold" Click="selectVideo6">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF252424" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+
+                        <Button VerticalAlignment="Top" HorizontalAlignment="Center"   Content="Audio Source" BorderThickness="0" Width="155" Foreground="Black" FontWeight="Bold">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF252424" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+
+                    <Border   Name="vidSource6"  HorizontalAlignment="Center" Height="170"  Background="Black" VerticalAlignment="Center" Width="291">
+
+                        <MediaElement x:Name="video6" LoadedBehavior="Manual"/>
+                    </Border >
+
+                </StackPanel>
+
+
+                <StackPanel Height="55" x:Name="VideoMixControl6" Background="Black" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.RowSpan="2" Grid.Column="1" Grid.Row="1"    Style="{StaticResource video1}" Opacity="0" MouseMove="showVideoControl">
+                    <Grid Height="55" >
+                        <Grid.RowDefinitions >
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="0"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Seek to progressbar. Ths slider allows you to jump to different parts of the media playback. -->
+                        <Slider  x:Name="video_1_slider6" Grid.Column="0" Grid.ColumnSpan ="5"  Grid.Row="0" Panel.ZIndex="100" VerticalAlignment="Top" Height="5"   ValueChanged="video_1_Progrss6" Thumb.DragStarted="video_1_slider_DragStarted6"  Thumb.DragCompleted="video_1_slider_DragCompleted6" />
+                        <ProgressBar  x:Name="video_1_progressbar6" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan ="5" VerticalAlignment="Top" Foreground="Red"  Height="5"  ValueChanged="video_1_Progrss6"/>
+
+                        <TextBlock Foreground="White" VerticalAlignment="Top" Margin="0,3,0,0" x:Name="txt6" Grid.ColumnSpan="5"/>
+
+                        <Image x:Name="video_1_PlayBtn6"   Source="resources/play.fw.png" Grid.Column="0"  Width="20" Height="20"  HorizontalAlignment="Left" Margin="10,15,0,10" Grid.RowSpan="3" MouseDown="video_1_Play6"/>
+                        <Image x:Name="video_1_PauseBtn6" Source="resources/pause.fw.png" Grid.Column="0" Width="20" Height="20" HorizontalAlignment="Left" Margin="10,15,0,10" Grid.RowSpan="3" MouseDown="video_1_Pause6" Visibility="Collapsed"/>
+                        <Image Source="resources/stop.fw.png" Grid.Column="1" Width="20"  HorizontalAlignment="Left" Grid.RowSpan="2" Height="20" VerticalAlignment="Bottom" Margin="0,0,0,15" Grid.Row="1" MouseDown="video_1_Stop6"/>
+
+                        <!-- Volume slider. This slider allows a Volume range between 0 and 1. -->
+                        <TextBlock Foreground="White" Grid.Column="1" Grid.Row="1"  VerticalAlignment="Center" Margin="40,1,5,1" Text="Volume" Grid.ColumnSpan="2"/>
+                        <Slider x:Name="volumeSlider6"  Grid.Column="4"  Grid.Row="1" VerticalAlignment="Bottom" ValueChanged="video_1_Volume6" Minimum="0" Maximum="1" Value="0.5" Cursor="Hand" Margin="0,0,0,1" HorizontalAlignment="Left" Width="115" />
+                        <Image HorizontalAlignment="Right"   Grid.Column="4"  Source="resources\videoChannel6.fw.png"     Width="66" RenderTransformOrigin="0.122,0.0" Margin="0,3,0,-3" Grid.RowSpan="3" />
+
+
+                    </Grid>
+                </StackPanel>
+                <!--End of video source 6-->
+
+
+
+
+
+                <!--Start of videoSource7-->
+                <StackPanel Grid.Column="2"  Grid.Row="1"  Margin="10,10,0,0" Background="Black">
+                    <StackPanel Orientation="Horizontal" >
+
+                        <Button VerticalAlignment="Top" HorizontalAlignment="Center" Content="Video Source" BorderThickness="0" Width="150" Foreground="Black" FontWeight="Bold" Click="selectVideo7">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF252424" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+
+                        <Button VerticalAlignment="Top" HorizontalAlignment="Center"   Content="Audio Source" BorderThickness="0" Width="155" Foreground="Black" FontWeight="Bold">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF252424" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+
+                    <Border   Name="vidSource7"  HorizontalAlignment="Center" Height="170"  Background="Black" VerticalAlignment="Center" Width="291">
+
+                        <MediaElement x:Name="video7" LoadedBehavior="Manual"/>
+                    </Border >
+
+                </StackPanel>
+
+
+                <StackPanel Height="55" x:Name="VideoMixControl7" Background="Black" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.RowSpan="2" Grid.Column="2"   Grid.Row="1" Style="{StaticResource video1}" Opacity="0" MouseMove="showVideoControl">
+                    <Grid Height="55" >
+                        <Grid.RowDefinitions >
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="0"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Seek to progressbar. Ths slider allows you to jump to different parts of the media playback. -->
+                        <Slider  x:Name="video_1_slider7" Grid.Column="0" Grid.ColumnSpan ="5"  Grid.Row="0" Panel.ZIndex="100" VerticalAlignment="Top" Height="5"   ValueChanged="video_1_Progrss7" Thumb.DragStarted="video_1_slider_DragStarted7"  Thumb.DragCompleted="video_1_slider_DragCompleted7" />
+                        <ProgressBar  x:Name="video_1_progressbar7" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan ="5" VerticalAlignment="Top" Foreground="Red"  Height="5"  ValueChanged="video_1_Progrss7"/>
+
+                        <TextBlock Foreground="White" VerticalAlignment="Top" Margin="0,3,0,0" x:Name="txt7" Grid.ColumnSpan="5"/>
+
+                        <Image x:Name="video_1_PlayBtn7"   Source="resources/play.fw.png" Grid.Column="0"  Width="20" Height="20"  HorizontalAlignment="Left" Margin="10,15,0,10" Grid.RowSpan="3" MouseDown="video_1_Play7"/>
+                        <Image x:Name="video_1_PauseBtn7" Source="resources/pause.fw.png" Grid.Column="0" Width="20" Height="20" HorizontalAlignment="Left" Margin="10,15,0,10" Grid.RowSpan="3" MouseDown="video_1_Pause7" Visibility="Collapsed"/>
+                        <Image Source="resources/stop.fw.png" Grid.Column="1" Width="20"  HorizontalAlignment="Left" Grid.RowSpan="2" Height="20" VerticalAlignment="Bottom" Margin="0,0,0,15" Grid.Row="1" MouseDown="video_1_Stop7"/>
+
+                        <!-- Volume slider. This slider allows a Volume range between 0 and 1. -->
+                        <TextBlock Foreground="White" Grid.Column="1" Grid.Row="1"  VerticalAlignment="Center" Margin="40,1,5,1" Text="Volume" Grid.ColumnSpan="2"/>
+                        <Slider x:Name="volumeSlider7"  Grid.Column="4"  Grid.Row="1" VerticalAlignment="Bottom" ValueChanged="video_1_Volume7" Minimum="0" Maximum="1" Value="0.5" Cursor="Hand" Margin="0,0,0,1" HorizontalAlignment="Left" Width="115" />
+                        <Image HorizontalAlignment="Right"   Grid.Column="4"  Source="resources\videoChannel7.fw.png"     Width="66" RenderTransformOrigin="0.122,0.0" Margin="0,3,0,-3" Grid.RowSpan="3" />
+
+
+                    </Grid>
+                </StackPanel>
+                <!--End of video source 7-->
+
+
+                <!--Start of videoSource8-->
+                <StackPanel Grid.Column="3"  Grid.Row="1"  Margin="10,10,0,0" Background="Black">
+                    <StackPanel Orientation="Horizontal" >
+
+                        <Button VerticalAlignment="Top" HorizontalAlignment="Center" Content="Video Source" BorderThickness="0" Width="150" Foreground="Black" FontWeight="Bold" Click="selectVideo8">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF252424" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+
+                        <Button VerticalAlignment="Top" HorizontalAlignment="Center"   Content="Audio Source" BorderThickness="0" Width="155" Foreground="Black" FontWeight="Bold">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF252424" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+
+                    <Border   Name="vidSource8"  HorizontalAlignment="Center" Height="170"  Background="Black" VerticalAlignment="Center" Width="291">
+
+                        <MediaElement x:Name="video8" LoadedBehavior="Manual"/>
+                    </Border >
+
+                </StackPanel>
+
+
+                <StackPanel Height="55" x:Name="VideoMixControl8" Background="Black" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.RowSpan="2" Grid.Column="3"  Grid.Row="1"  Style="{StaticResource video1}" Opacity="0" MouseMove="showVideoControl">
+                    <Grid Height="55" >
+                        <Grid.RowDefinitions >
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="0"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Seek to progressbar. Ths slider allows you to jump to different parts of the media playback. -->
+                        <Slider  x:Name="video_1_slider8" Grid.Column="0" Grid.ColumnSpan ="5"  Grid.Row="0" Panel.ZIndex="100" VerticalAlignment="Top" Height="5"   ValueChanged="video_1_Progrss8" Thumb.DragStarted="video_1_slider_DragStarted8"  Thumb.DragCompleted="video_1_slider_DragCompleted8" />
+                        <ProgressBar  x:Name="video_1_progressbar8" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan ="5" VerticalAlignment="Top" Foreground="Red"  Height="5"  ValueChanged="video_1_Progrss8"/>
+
+                        <TextBlock Foreground="White" VerticalAlignment="Top" Margin="0,3,0,0" x:Name="txt8" Grid.ColumnSpan="5"/>
+
+                        <Image x:Name="video_1_PlayBtn8"   Source="resources/play.fw.png" Grid.Column="0"  Width="20" Height="20"  HorizontalAlignment="Left" Margin="10,15,0,10" Grid.RowSpan="3" MouseDown="video_1_Play8"/>
+                        <Image x:Name="video_1_PauseBtn8" Source="resources/pause.fw.png" Grid.Column="0" Width="20" Height="20" HorizontalAlignment="Left" Margin="10,15,0,10" Grid.RowSpan="3" MouseDown="video_1_Pause8" Visibility="Collapsed"/>
+                        <Image Source="resources/stop.fw.png" Grid.Column="1" Width="20"  HorizontalAlignment="Left" Grid.RowSpan="2" Height="20" VerticalAlignment="Bottom" Margin="0,0,0,15" Grid.Row="1" MouseDown="video_1_Stop8"/>
+
+                        <!-- Volume slider. This slider allows a Volume range between 0 and 1. -->
+                        <TextBlock Foreground="White" Grid.Column="1" Grid.Row="1"  VerticalAlignment="Center" Margin="40,1,5,1" Text="Volume" Grid.ColumnSpan="2"/>
+                        <Slider x:Name="volumeSlider8"  Grid.Column="4"  Grid.Row="1" VerticalAlignment="Bottom" ValueChanged="video_1_Volume8" Minimum="0" Maximum="1" Value="0.5" Cursor="Hand" Margin="0,0,0,1" HorizontalAlignment="Left" Width="115" />
+                        <Image HorizontalAlignment="Right"   Grid.Column="4"  Source="resources\videoChannel8.fw.png"     Width="66" RenderTransformOrigin="0.122,0.0" Margin="0,3,0,-3" Grid.RowSpan="3" />
+
+
+                    </Grid>
+                </StackPanel>
+                <!--End of video source 8-->
+
+                <!--0000000000000000000000 END OF BUTTOM VIDEO SOURCE 00000000000000000000000000-->
+
+
+            </Grid>
+        </StackPanel>
+    </StackPanel>
+
+
+
+</Window>
